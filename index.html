@@ -12,11 +12,31 @@
     <script defer src="assets/js/main.js"></script>
   </head>
   <body class="bg-beige font-sans text-gray-800">
+      <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-1 flex justify-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+          <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+          <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+        </div>
+        <div class="flex space-x-2">
+          <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
+          <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer to offset navbar height -->
+  <div class="h-16"></div>
     <!-- Language Toggle -->
-    <div class="flex justify-end p-4">
+    <!-- <div class="flex justify-end p-4">
       <button id="lang-en" class="mr-2 px-3 py-1 border rounded">EN</button>
       <button id="lang-si" class="px-3 py-1 border rounded">සිං</button>
-    </div>
+    </div> -->
 
     <!-- Hero Slideshow -->
     <section class="relative w-full h-screen overflow-hidden">
@@ -56,11 +76,15 @@
     <script>
       const translations = {
         title: { en: "Kirineliye Wedagedara", si: "කිරිනැළියේ වෙද ගෙදර" },
+        nav_home: { en: "Home", si: "මුල් පිටුව" },
+        nav_services: { en: "Services", si: "සේවාවන්" },
+        nav_about: { en: "About", si: "අප ගැන" },
+        nav_contact: { en: "Contact Us", si: "අපව අමතන්න" },
         tagline: { en: "Health is the ultimate wealth", si: "ආරෝග්‍යා පරමා ලාභා" },
-        intro_title: { en: "Welcome to the House of Healing", si: "සෙරිනිටි සනසීමේ නිවන් මැදුරට පිළිගනිමු" },
+        intro_title: { en: "Welcome to the Pasyala Kirineliya Medical Center website.", si: "පස්යාල කිරිනැළියේ වෙද ගෙදර වෙබ් අඩවියට ඔබව සාදරයෙන් පිළිගනිමු" },
         intro_text: {
-          en: "Kirineliye Wedagedara is a traditional Ayurvedic medical center with a history dating back to 149 BCE. We offer holistic treatments and healing rituals rooted in Sri Lankan heritage, led by Dr. Ariyaratne Waduge, an expert in Panchakarma, mental health, and herbal remedies.",
-          si: "ක්‍රි.පූ. 149 දී ආරම්භ වූ ඓතිහාසික වෙදමය පාරම්පරිකත්වයකින් යුතු සම්පූර්ණ ආයුර්වේදය මෙහිදී අනුගමනය කරයි. වසර 30,000කට අධික රෝගීන්ට ප්‍රතිකාර කල වෛද්‍ය ආරියරත්න වඩුගේ මහතා මෙයට මූලිකත්වය දරයි."
+          en: "Dedicated to the control and cure of diseases through traditional and indigenous Ayurveda, it is a form of medicine practiced through the traditional knowledge and folk wisdom passed down through the generations of the Vedarala of the Kirineliya village, bestowed by King Dutugemunu in 149 BC.Since 1995, the traditional medicine of Kirineliya in Matara has been practicing traditional medicine, including boils, ulcers, burns, fractures, astrology, peacemaking, and the traditional medicine of the Devamulla Wijesekara Veda lineage of Bulathsinhala, and has practiced herbal medicine, medicine, convulsions, convulsions, and kaduttu, as well as peacemaking. Ariyaratne Vaduge, who has practiced a diploma in psychology from the University of Peradeniya, a certificate course in astrology from the University of Kelaniya, and a diploma in panchakarma from the Cochin University of Pune, India, and has cured or controlled the diseases of more than 30,000 patients, runs the Vedagedara Pasyala in Kirineliya.",
+          si: "පාරම්පරික හා දේශීය ආයුර්වේදයෙන් රෝග පාලනය හා සුව කිරීම සදහා කැප වූ, ක්‍රිස්තු පූර්ව 149දී දුටුගැමුණු රජතුමා විසින් ප්‍රදානය කරන ලද කිරිනැළිය ගම්වරයේ වෙදරාලගේ පරම්පරාවෙන් පැවත එන පාරම්පරික දැනුම් සම්ප්‍රදායෙන් හා ජන විඥාණයෙන් ප්‍රගුණ වූ වෙදකමකි.1995 සිට මාතර කිරිනැළියේ පාරම්පරික වෙදකමේ ගෙඩි, වණ, විදුම් පිළිස්සුම්, කැඩුම් බිඳුම්, ජ්‍යොතිෂ්‍ය, ශාන්ති කර්ම හා බුලත්සිංහල දේවමුල්ල විජේසේකර වෙද පරම්පරාවේ, පාරම්පරික සර්වාංග වෙදකමත්, සන්නි, කෝළ, වලිප්පු, ඉලප්පු, කඩුත්තු සදහා ඖෂධ ප්‍රතිකාර මෙන්ම ශාන්තිකර්මයන්ද ප්‍රගුණ කර ඇති අතර පේරාදෙණිය විශ්වවිද්‍යාලයෙන් මනෝ ව්ද්‍යා ඩිප්ලෝමාවද, කැළණිය විශ්වවිද්‍යාලයෙන් ජ්‍යොතිෂ්‍ය සහතික පත්‍ර පාඨමාලාවද, ඉන්දියාවේ පූනේ කොචින් විශ්වවිද්‍යාලයෙන් පංචකර්ම ඩිප්ලෝමාවද ප්‍රගුණ කර රෝගීන් 30 000 අධික ප්‍රමාණයකගේ රෝග සුව හෝ පාලනය කල ආරියරත්න වඩුගේ වෙදමහතා විසින් කිරිනැළියේ වෙදගෙදර පස්යාල, පවත්වාගෙන යනු ලබයි."
         },
         cta_title: { en: "Explore Our Treatments", si: "අපගේ ප්‍රතිකාර ක්‍රම සෙවීම" },
         cta_button: { en: "View Services", si: "සේවාවන් දැක්ම" },

@@ -10,10 +10,26 @@
 </head>
 <body class="bg-beige font-sans text-gray-800">
 
-  <div class="flex justify-end p-4">
-    <button id="lang-en" class="mr-2 px-3 py-1 border rounded">EN</button>
-    <button id="lang-si" class="px-3 py-1 border rounded">සිං</button>
-  </div>
+      <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-1 flex justify-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+          <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+          <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+        </div>
+        <div class="flex space-x-2">
+          <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
+          <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer to offset navbar height -->
+  <div class="h-16"></div>
 
 <section id="contact" class="py-24 px-6 md:px-20 max-w-6xl mx-auto">
   <h2 class="text-4xl font-extrabold text-center mb-6 lang text-green-900" data-key="contact_title">Contact Kirineliye Wedagedara</h2>

@@ -12,11 +12,26 @@
     <script defer src="assets/js/main.js"></script>
   </head>
   <body class="bg-beige font-sans text-gray-800">
-    <!-- Language Toggle -->
-    <div class="flex justify-end p-4">
-      <button id="lang-en" class="mr-2 px-3 py-1 border rounded">EN</button>
-      <button id="lang-si" class="px-3 py-1 border rounded">සිං</button>
+       <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-1 flex justify-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+          <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+          <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+          <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+        </div>
+        <div class="flex space-x-2">
+          <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
+          <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+        </div>
+      </div>
     </div>
+  </nav>
+
+  <!-- Spacer to offset navbar height -->
+  <div class="h-16"></div>
 
     <!-- About Hero -->
     <section class="bg-cover bg-center h-64 flex items-center justify-center text-white text-center" style="background-image: url('assets/images/hero-about.jpg');">
@@ -60,17 +75,17 @@
     <script>
       const translations = {
         about_title: { en: "About Kirineliye Wedagedara", si: "කිරිනැළියේ වෙද ගෙදර පිළිබඳව" },
-        history_title: { en: "A Legacy of Healing Since 149 BCE", si: "ක්‍රි.පූ. 149 සිට සනීපාරක්ෂක උරුමයක්" },
+        history_title: { en: "The traditional medicine inherited from the reign of King Dutugemunu", si: "දුටුගැමුණු රජසමයේ සිට පාරම්පරිකව උරුම වූ වෙදශාස්ත්‍රය" },
         history_text: {
-          en: "Kirineliye Wedagedara’s roots trace back to the time of King Dutugemunu, passed through generations of traditional healers. For over two millennia, it has remained a trusted name in Ayurvedic healing in Sri Lanka.",
-          si: "කිරිනැළියේ වෙද ගෙදරේ ආරම්භය ධතුගැමුණු රජුගේ යුගයට හැරී තිබේ. පරම්පරාගතව අනුගමනය වන සම්ප්‍රදායික වෙදකමක් වන මෙය, දියුණු ආයුර්වේද ප්‍රතිකාරයක් ලෙස වසරදහස් ගණනක් විශ්වාසයට පාත්‍ර විය." },
+          en: "After King Dutugemunu was defeated in the Anuradhapura war and returned to Ruhuna, he nursed his daughter and fed his people during his stay in Ruhuna. As a token of gratitude, King Dutugemunu became king in 149 BC and granted a village called Kirineliya to Vedarala as a token of gratitude. Since then, the Veda lineage descended from Vedarala in Kirineliya is our Veda lineage in Kirineliya.",
+          si: "දුටුගැමුණු රජතුමා අනුරාධපුර යුද්ධයෙන් පැරදී රුහුණට ආ පසු, රුහුණේ සිටි කාලය තුළ නෑබිලියට කිරි දී පිරිස පෝෂණය කළ නිසා ක්‍රි.පූ 149 දී දුටුගැමුණු රජතුමා රජ වූ පසු කෘතගුණ සැලකීමක් ලෙස කිරිනැළිය නමින් ගම්වරයක් වෙදරාළට ප්‍රදානය කරන ලදී. එතැන් සිට කිරිනැළියේ වෙදරාළගෙන් පැවත එන වෙද පරම්පරාව අපගේ කිරිනැළියේ වෙද පරම්පරාවයි." },
         history_text2: {
-          en: "From bone setting to spiritual rituals, this heritage encompasses both medical and mystical approaches to holistic health.",
-          si: "ආතන්‍ය සන්ධානයේ සිට ආත්මීය සන්සුන්කම් දක්වා, මෙය වෛද්‍ය සහ ආගමික ක්‍රමයන් අතුරුදහන් නොකරන සම්පූර්ණ සනීපාරක්ෂණ උරුමයකි." },
+          en: "The unique medical knowledge of Kirineliya, which has been passed down since then, such as the treatment of tumors, cancer, and burns, traditional medicine, medicinal recipes, astrology, demonology, magic spells, and peace rituals, is maintained with great skill through tradition and folk wisdom.The medical clinic in Kirineliya, Pasyala, established by Ariyaratne Waduge, who has mastered the knowledge received through tradition, has treated over 30,000 patients since 1995.",
+          si: "එදා සිට පැවත එන කිරිනැළියට සුවිශේෂ වෙදකම වන ගෙඩි වන පිළිකා හා විදුම් පිළිස්සුම් ප්‍රතිකාර, පාරම්පරික වෙද ශාස්ත්‍රය, ඖෂධ වට්ටෝරු, ජ්‍යෝතිෂය, භූත විද්‍යාව, යන්ත්‍ර මන්ත්‍ර, ශාන්ති කර්ම පිළිබද විශිෂ්ට දැනුම් සම්ප්‍රදායෙන් හා ජන විඥාණයෙන් ප්‍රගුණව පවත්වාගෙන යනු ලබයි.එලෙස පාරම්පරිකව ලැබුණු දැණුමෙන් ප්‍රගුණව ආරියරත්න වඩුගේ වෙදමහතා විසින් ස්ථාපිත කළ පස්යාල කිරිනැළියේ වෙදගෙදර ක්‍රි.ව 1995 සිට අද දක්වා රෝගීන් 30000 අධික ප්‍රමාණයකට ප්‍රතිකාර කර ඇත" },
         doctor_title: { en: "Dr. Ariyaratne Waduge", si: "වෛද්‍ය ආරියරත්න වඩුගේ" },
         doctor_text: {
           en: "An expert Ayurvedic doctor with diplomas in Panchakarma (India), psychiatry (Peradeniya), and astrology (Kelaniya). He has treated over 30,000 patients combining medical science and ancestral wisdom.",
-          si: "ආයුර්වේදයේ විශේෂඥයකු වන ආරියරත්න වඩුගේ මහතා පන්චකර්ම (ඉන්දියාව), මානසික වෛද්‍ය (පේරදෙණිය) සහ ජ්‍යෝතිෂ්‍යවේදය (කැළණිය) පිළිබඳ ඩිප්ලෝමා ලබා ඇති අතර, වසර 30,000කට අධික රෝගීන්ට ප්‍රතිකාර කර ඇත." },
+          si: "ආයුර්වේදයේ විශේෂඥයකු වන ආරියරත්න වඩුගේ මහතා පන්චකර්ම (ඉන්දියාව), මානසික වෛද්‍ය (පේරදෙණිය) සහ ජ්‍යෝතිෂ්‍යවේදය (කැළණිය) පිළිබඳ ඩිප්ලෝමා ලබා ඇති අතර, 30,000කට අධික රෝගීන්ට ප්‍රතිකාර කර ඇත." },
         footer: { en: "© 2025 Kirineliye Wedagedara. All rights reserved.", si: "© 2025 කිරිනැළියේ වෙද ගෙදර. සියලු හිමිකම් ඇවිරිණි." }
       };
     </script>
