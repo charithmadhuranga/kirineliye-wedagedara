@@ -3,32 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Kirineliye Wedagedara</title>
+  <title class="lang" data-key="contact_page_title_meta">Contact – Kirineliye Wedagedara</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script defer src="assets/js/lang.js"></script>
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body class="bg-beige font-sans text-gray-800">
 
-      <!-- Navigation Bar -->
-  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <div class="flex-1 flex justify-center space-x-8">
-          <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
-          <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
-          <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
-          <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
-        </div>
-        <div class="flex space-x-2">
-          <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
-          <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+<nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex-shrink-0 flex items-center">
+        <a href="index.html" class="text-xl font-bold text-green-700">Kirineliye</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="hidden md:flex flex-1 justify-center items-center space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+        <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+        <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+        <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+      </div>
+
+      <div class="hidden md:flex space-x-2">
+        <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
+        <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden mt-2">
+      <div class="flex flex-col items-start space-y-2 py-2">
+        <a href="index.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+        <a href="services.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+        <a href="about.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+        <div class="flex space-x-2 pt-2">
+          <button id="lang-en-mobile" class="px-3 py-1 border rounded text-sm">EN</button>
+          <button id="lang-si-mobile" class="px-3 py-1 border rounded text-sm">සිං</button>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Spacer to offset navbar height -->
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // These event listeners for mobile buttons are now handled by lang.js's DOMContentLoaded.
+  // Keeping them here for now won't break things, but they are redundant if lang.js is setup as shown previously.
+  // document.getElementById('lang-en-mobile')?.addEventListener('click', () => {
+  //   document.getElementById('html-root')?.setAttribute('lang', 'en');
+  //   setLanguage('en');
+  // });
+  // document.getElementById('lang-si-mobile')?.addEventListener('click', () => {
+  //   document.getElementById('html-root')?.setAttribute('lang', 'si');
+  //   setLanguage('si');
+  // });
+</script>
+
   <div class="h-16"></div>
 
 <section id="contact" class="py-24 px-6 md:px-20 max-w-6xl mx-auto">
@@ -37,7 +82,6 @@
     We'd love to hear from you. Please reach out via the form or our contact details below.
   </p>
   <div class="grid md:grid-cols-2 gap-12 items-start bg-white shadow-2xl rounded-3xl p-10">
-    <!-- Contact Details -->
     <div class="space-y-8 text-lg">
       <div>
         <h3 class="text-2xl font-semibold text-green-700 lang" data-key="address_title">Address</h3>
@@ -56,25 +100,23 @@
       </div>
 <div>
   <h3 class="text-2xl font-semibold text-green-700 lang" data-key="clinic_hours_title">Clinic Hours</h3>
-  <table class="w-full text-left text-gray-600 border-collapse lang" id="clinic-hours-table">
+  <table class="w-full text-left text-gray-600 border-collapse" id="clinic-hours-table">
     <tbody>
-      <!-- Populated via JS -->
-    </tbody>
+      </tbody>
   </table>
   <p id="clinic-note" class="mt-2 text-sm text-gray-500 lang" data-key="clinic_note">(Book an appointment before visiting.)</p>
 </div>
     </div>
 
-    <!-- Formspree Contact Form -->
     <form id="my-form" action="https://formspree.io/f/mblyarrp" method="POST" class="space-y-6 animate-fadeIn">
       <div>
-        <label class="block text-lg font-semibold mb-1 lang" data-key="form_email">Email:</label>
-        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out hover:border-green-600" />
+        <label for="email" class="block text-lg font-semibold mb-1 lang" data-key="form_email">Email:</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out hover:border-green-600" />
       </div>
 
       <div>
-        <label class="block text-lg font-semibold mb-1 lang" data-key="form_message">Message:</label>
-        <textarea name="message" required rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out hover:border-green-600"></textarea>
+        <label for="message" class="block text-lg font-semibold mb-1 lang" data-key="form_message">Message:</label>
+        <textarea id="message" name="message" required rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out hover:border-green-600"></textarea>
       </div>
 
       <div class="text-center">
@@ -85,22 +127,19 @@
   </div>
 </section>
 
-<!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- GSAP Animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <script>
-  document.getElementById('lang-en')?.addEventListener('click', () => {
-    document.getElementById('html-root')?.setAttribute('lang', 'en');
-    setLanguage('en');
-  });
-  document.getElementById('lang-si')?.addEventListener('click', () => {
-    document.getElementById('html-root')?.setAttribute('lang', 'si');
-    setLanguage('si');
-  });
+  // Mobile menu toggle logic - (already in the nav <script> block, keeping it concise here)
+  // const btn = document.getElementById('mobile-menu-button');
+  // const menu = document.getElementById('mobile-menu');
+  // btn.addEventListener('click', () => {
+  //   menu.classList.toggle('hidden');
+  // });
 
+  // GSAP animation for contact section
   gsap.from("#contact .grid", {
     scrollTrigger: {
       trigger: "#contact",
@@ -112,6 +151,7 @@
     ease: "power3.out"
   });
 
+  // Formspree submission logic
   var form = document.getElementById("my-form");
 
   async function handleSubmit(event) {
@@ -163,124 +203,21 @@
 
   form.addEventListener("submit", handleSubmit);
 
-  // Language translations rendering function
-  const translations = {
-    contact_title: {
-      en: "Contact Kirineliye Wedagedara",
-      si: "කිරිනැළියේ වෙද ගෙදර අමතන්න"
-    },
-    contact_sub: {
-      en: "We'd love to hear from you. Please reach out via the form or our contact details below.",
-      si: "අප හා සම්බන්ධ වීමට අපි කැමතියි. කරුණාකර පෝරමය හරහා හෝ අපගේ විස්තර මඟින් සම්බන්ධ වන්න."
-    },
-    address_title: {
-      en: "Address",
-      si: "ලිපිනය"
-    },
-    address_text: {
-      en: `Kirineliya Veda Gedara,
-Kandy Road,
-Pasyala,
-(Road between Pasyala Maha Vidyalaya and Primary School)`,
-      si: `කිරිනැළියේ වෙද ගෙදර,
-මහනුවර පාර,
-පස්යාල,
-(පස්යාල මහ විද්‍යාලය සහ ප්‍රාථමික පාසල අතර පාර)`
-    },
-    phone_title: {
-      en: "Phone & WhatsApp",
-      si: "දුරකථන සහ WhatsApp"
-    },
-    location_title: {
-      en: "Our Location",
-      si: "අපගේ ස්ථානය"
-    },
-    clinic_hours_title: {
-      en: "Clinic Hours",
-      si: "චිකිත්සාලයේ සේවා වේලාවන්"
-    },
-clinic_hours: {
-  en: [
-    ["Monday", "Closed"],
-    ["Tuesday", "8 AM – 8 PM"],
-    ["Wednesday", "Closed"],
-    ["Thursday", "8 AM – 8 PM"],
-    ["Friday", "8 AM – 8 PM"],
-    ["Saturday", "Closed"],
-    ["Sunday", "8 AM – 8 PM"]
-  ],
-  si: [
-    ["සඳුදා", "වසන්"],
-    ["අඟහරුවාදා", "පෙ.ව. 8 – ප.ව. 8"],
-    ["බදාදා", "වසන්"],
-    ["බ්‍රහස්පතින්දා", "පෙ.ව. 8 – ප.ව. 8"],
-    ["සිකුරාදා", "පෙ.ව. 8 – ප.ව. 8"],
-    ["සෙනසුරාදා", "වසන්"],
-    ["ඉරිදා", "පෙ.ව. 8 – ප.ව. 8"]
-  ],
-},
-clinic_note: {
-  en: "(Book an appointment before visiting.)",
-  si: "(ඇතුල් වීමට පෙර වේලාවක් වෙන්කරන්න.)"
-},
-    form_email: {
-      en: "Email:",
-      si: "ඊමේල්:"
-    },
-    form_message: {
-      en: "Message:",
-      si: "පණිවිඩය:"
-    },
-    form_submit: {
-      en: "Submit",
-      si: "යවන්න"
-    },
-    footer: {
-      en: "© 2025 Kirineliye Wedagedara. All rights reserved.",
-      si: "© 2025 කිරිනැළියේ වෙද ගෙදර. සියලු හිමිකම් ඇවිරිණි."
-    }
-  };
+  // ***************************************************************
+  // REMOVED INLINE TRANSLATIONS DICTIONARY AND setLanguage CALL
+  // THIS LOGIC IS NOW CENTRALIZED IN assets/js/lang.js
+  // ***************************************************************
 
+  // The renderClinicHours function needs to be accessible globally
+  // It's best practice to move this to lang.js if setLanguage is also there.
+  // If it must remain here, ensure setLanguage in lang.js calls it.
+  // For now, assuming it's part of the global lang.js logic.
 
-function renderClinicHours(lang) {
-  const tbody = document.querySelector('#clinic-hours-table tbody');
-  tbody.innerHTML = '';
-  const hours = translations.clinic_hours[lang] || translations.clinic_hours.en;
-  hours.forEach(([day, time]) => {
-    const row = document.createElement('tr');
-    row.innerHTML = `<td class="py-1 pr-4 font-medium">${day}</td><td class="py-1">${time}</td>`;
-    tbody.appendChild(row);
-  });
+  // Moved to lang.js:
+  // function setLanguage(lang) { ... }
+  // function renderClinicHours(lang) { ... }
+  // The initial setLanguage('en') should also be in lang.js's DOMContentLoaded.
 
-  const note = translations.clinic_note[lang] || "";
-  const noteEl = document.getElementById("clinic-note");
-  noteEl.textContent = note;
-}
-
-  // Function to set language and update text content dynamically
-  function setLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => {
-      const key = el.getAttribute('data-key');
-      if (key && translations[key]) {
-        const translation = translations[key][lang];
-        if (Array.isArray(translation)) {
-          // For arrays like clinic_hours, render list items
-          if (el.tagName.toLowerCase() === 'ul') {
-            el.innerHTML = translation.map(item => `<li>${item}</li>`).join('');
-          } else {
-            el.innerHTML = translation.join('<br>');
-          }
-        } else {
-          el.textContent = translation;
-        }
-      }
-      renderClinicHours(lang);
-    });
-  }
-
-  // Set initial language to English on page load
-  setLanguage('en');
-  
 </script>
 
 </body>

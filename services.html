@@ -1,46 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services – Kirineliye Wedagedara</title>
+    <title class="lang" data-key="services_page_title_meta">Services – Kirineliye Wedagedara</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script defer src="assets/js/lang.js"></script>
-    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/lang.js"></script> <script defer src="assets/js/main.js"></script>
   </head>
   <body class="bg-beige font-sans text-gray-800">
-      <!-- Navigation Bar -->
-  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <div class="flex-1 flex justify-center space-x-8">
-          <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
-          <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
-          <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
-          <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
-        </div>
-        <div class="flex space-x-2">
-          <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
-          <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+<nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex-shrink-0 flex items-center">
+        <a href="index.html" class="text-xl font-bold text-green-700">Kirineliye</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="hidden md:flex flex-1 justify-center items-center space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+        <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+        <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+        <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+      </div>
+
+      <div class="hidden md:flex space-x-2">
+        <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
+        <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden mt-2">
+      <div class="flex flex-col items-start space-y-2 py-2">
+        <a href="index.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+        <a href="services.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+        <a href="about.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+        <div class="flex space-x-2 pt-2">
+          <button id="lang-en-mobile" class="px-3 py-1 border rounded text-sm">EN</button>
+          <button id="lang-si-mobile" class="px-3 py-1 border rounded text-sm">සිං</button>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Spacer to offset navbar height -->
+<script>
+  // Mobile menu toggle logic
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // Removed inline language sync for mobile; lang.js now handles this globally.
+  // document.getElementById('lang-en-mobile')?.addEventListener('click', () => {
+  //   document.getElementById('html-root')?.setAttribute('lang', 'en');
+  //   setLanguage('en');
+  // });
+  // document.getElementById('lang-si-mobile')?.addEventListener('click', () => {
+  //   document.getElementById('html-root')?.setAttribute('lang', 'si');
+  //   setLanguage('si');
+  // });
+</script>
+
   <div class="h-16"></div>
 
-    <!-- Services Hero -->
     <section class="bg-cover bg-center h-64 flex items-center justify-center text-white text-center" style="background-image: url('assets/images/hero-services.jpg');">
       <div class="bg-black bg-opacity-50 p-6">
         <h1 class="text-4xl font-bold lang" data-key="services_title">Our Treatments & Services</h1>
       </div>
     </section>
 
-    <!-- Services Grid -->
     <section class="py-16 px-6 md:px-20 bg-white">
       <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         <div class="bg-green-50 p-6 rounded shadow hover:shadow-lg transition duration-300">
@@ -70,29 +111,9 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-6">
       <p class="lang" data-key="footer">© 2025 Kirineliye Wedagedara. All rights reserved.</p>
     </footer>
 
-    <!-- Translation Dictionary -->
-    <script>
-      const translations = {
-        services_title: { en: "Our Treatments & Services", si: "අපගේ ප්‍රතිකාර සහ සේවාවන්" },
-        service1_title: { en: "Panchakarma Detox", si: "පන්චකර්ම විෂ විමෝචනය" },
-        service1_text: { en: "Comprehensive cleansing therapy to restore body balance and health.", si: "ශරීරයේ සමාන්‍යතාවය නැවත පරිප්‍රේෂණය කිරීම සඳහා සම්පූර්ණ විෂ නිරෝධායන ප්‍රතිකාර." },
-        service2_title: { en: "Herbal Medicine", si: "හෙරබල් ඖෂධ" },
-        service2_text: { en: "Customized Ayurvedic medicines prepared with ancient herbal formulas.", si: "පෞරාණික උද්භිද මූලධර්ම අනුව සකස් කළ පුද්ගලීකෘත ආයුර්වේද ඖෂධ." },
-        service3_title: { en: "Bone & Joint Therapy", si: "අස්ථි හා සන්ධි ප්‍රතිකාර" },
-        service3_text: { en: "Natural orthopedic treatments for injuries and chronic pain.", si: "චිරකාලීන වේදනා සහ තුවාල සඳහා ස්වභාවික අස්ථි වෛද්‍ය ප්‍රතිකාර." },
-        service4_title: { en: "Spiritual Healing", si: "ආත්මීය සුවපත්කිරීම" },
-        service4_text: { en: "Energy balancing, blessings, and rituals for mental well-being.", si: "මානසික සන්සුන්කම සඳහා ශක්ති සමතුලිත කිරීම, ආශීර්වාද සහ චාරිත්‍ර." },
-        service5_title: { en: "Astrological Diagnosis", si: "ජ්‍යෝතිෂ්‍ය වෛද්‍ය විශ්ලේෂණය" },
-        service5_text: { en: "Personalized treatment guided by traditional astrology readings.", si: "ජ්‍යෝතිෂ්‍ය විවරණ මඟින් මඟ පෙන්වන පුද්ගලික ප්‍රතිකාර." },
-        service6_title: { en: "Mental Health Ayurveda", si: "මානසික සෞඛ්‍ය ආයුර්වේදය" },
-        service6_text: { en: "Ayurvedic approaches to stress, anxiety, and emotional balance.", si: "මානසික ආතතිය, කනගාටු සහ සංවේදී සන්සුන්කම සඳහා ආයුර්වේද ක්‍රමවේද." },
-        footer: { en: "© 2025 Kirineliye Wedagedara. All rights reserved.", si: "© 2025 කිරිනැළියේ වෙද ගෙදර. සියලු හිමිකම් ඇවිරිණි." }
-      };
-    </script>
-  </body>
+    </body>
 </html>
