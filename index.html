@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirineliye Wedagedara</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="assets/js/lang.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body class="bg-beige font-sans text-gray-800">
+    <!-- Language Toggle -->
+    <div class="flex justify-end p-4">
+      <button id="lang-en" class="mr-2 px-3 py-1 border rounded">EN</button>
+      <button id="lang-si" class="px-3 py-1 border rounded">සිං</button>
+    </div>
+
+    <!-- Hero Slideshow -->
+    <section class="relative w-full h-screen overflow-hidden">
+      <div id="hero-slideshow" class="absolute inset-0">
+        <div class="slide absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/slide1.jpg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('assets/images/slide2.jpg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0" style="background-image: url('assets/images/slide3.jpg');"></div>
+      </div>
+      <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-40 text-white text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 lang" data-key="title">Kirineliye Wedagedara</h1>
+        <p class="text-xl md:text-2xl lang" data-key="tagline">Health is the ultimate wealth</p>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-16 px-6 md:px-20 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-semibold mb-6 lang" data-key="intro_title">Welcome to the House of Healing</h2>
+        <p class="text-lg lang" data-key="intro_text">
+          Kirineliye Wedagedara is a traditional Ayurvedic medical center with a history dating back to 149 BCE. We offer holistic treatments and healing rituals rooted in Sri Lankan heritage, led by Dr. Ariyaratne Waduge, an expert in Panchakarma, mental health, and herbal remedies.
+        </p>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-12 bg-green-100 text-center">
+      <h3 class="text-2xl font-medium mb-4 lang" data-key="cta_title">Explore Our Treatments</h3>
+      <a href="services.html" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 transition lang" data-key="cta_button">View Services</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+      <p class="lang" data-key="footer">© 2025 Kirineliye Wedagedara. All rights reserved.</p>
+    </footer>
+
+    <!-- Language Dictionary (hidden for JS) -->
+    <script>
+      const translations = {
+        title: { en: "Kirineliye Wedagedara", si: "කිරිනැළියේ වෙද ගෙදර" },
+        tagline: { en: "Health is the ultimate wealth", si: "ආරෝග්‍යා පරමා ලාභා" },
+        intro_title: { en: "Welcome to the House of Healing", si: "සෙරිනිටි සනසීමේ නිවන් මැදුරට පිළිගනිමු" },
+        intro_text: {
+          en: "Kirineliye Wedagedara is a traditional Ayurvedic medical center with a history dating back to 149 BCE. We offer holistic treatments and healing rituals rooted in Sri Lankan heritage, led by Dr. Ariyaratne Waduge, an expert in Panchakarma, mental health, and herbal remedies.",
+          si: "ක්‍රි.පූ. 149 දී ආරම්භ වූ ඓතිහාසික වෙදමය පාරම්පරිකත්වයකින් යුතු සම්පූර්ණ ආයුර්වේදය මෙහිදී අනුගමනය කරයි. වසර 30,000කට අධික රෝගීන්ට ප්‍රතිකාර කල වෛද්‍ය ආරියරත්න වඩුගේ මහතා මෙයට මූලිකත්වය දරයි."
+        },
+        cta_title: { en: "Explore Our Treatments", si: "අපගේ ප්‍රතිකාර ක්‍රම සෙවීම" },
+        cta_button: { en: "View Services", si: "සේවාවන් දැක්ම" },
+        footer: { en: "© 2025 Kirineliye Wedagedara. All rights reserved.", si: "© 2025 කිරිනැළියේ වෙද ගෙදර. සියලු හිමිකම් ඇවිරිණි." }
+      };
+    </script>
+  </body>
+</html>

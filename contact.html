@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Kirineliye Wedagedara</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/lang.js"></script>
+</head>
+<body class="bg-beige font-sans text-gray-800">
+
+  <div class="flex justify-end p-4">
+    <button id="lang-en" class="mr-2 px-3 py-1 border rounded">EN</button>
+    <button id="lang-si" class="px-3 py-1 border rounded">සිං</button>
+  </div>
+
+<section id="contact" class="py-24 px-6 md:px-20 max-w-6xl mx-auto">
+  <h2 class="text-4xl font-extrabold text-center mb-6 lang text-green-900" data-key="contact_title">Contact Kirineliye Wedagedara</h2>
+  <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12 lang" data-key="contact_sub">
+    We'd love to hear from you. Please reach out via the form or our contact details below.
+  </p>
+  <div class="grid md:grid-cols-2 gap-12 items-start bg-white shadow-2xl rounded-3xl p-10">
+    <!-- Contact Details -->
+    <div class="space-y-8 text-lg">
+      <div>
+        <h3 class="text-2xl font-semibold text-green-700 lang" data-key="address_title">Address</h3>
+        <p class="lang text-gray-600 whitespace-pre-line" data-key="address_text"></p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-700 lang" data-key="phone_title">Phone & WhatsApp</h3>
+        <p><a href="tel:+94771234567" class="text-green-800 hover:underline">+94 77 123 4567</a></p>
+        <p><a href="https://wa.me/94771234567" target="_blank" class="text-green-800 hover:underline">WhatsApp Chat</a></p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-700 lang" data-key="location_title">Our Location</h3>
+        <div class="overflow-hidden rounded-xl shadow-md">
+          <iframe class="w-full h-64" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63330.09257412338!2d80.123008!3d7.1649286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae31d35025706f7%3A0x296055c0c1384b18!2sKirineliye%20Weda%20Gedara!5e0!3m2!1sen!2slk!4v1718794177000!5m2!1sen!2slk" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+<div>
+  <h3 class="text-2xl font-semibold text-green-700 lang" data-key="clinic_hours_title">Clinic Hours</h3>
+  <table class="w-full text-left text-gray-600 border-collapse lang" id="clinic-hours-table">
+    <tbody>
+      <!-- Populated via JS -->
+    </tbody>
+  </table>
+  <p id="clinic-note" class="mt-2 text-sm text-gray-500 lang" data-key="clinic_note">(Book an appointment before visiting.)</p>
+</div>
+    </div>
+
+    <!-- Formspree Contact Form -->
+    <form id="my-form" action="https://formspree.io/f/mblyarrp" method="POST" class="space-y-6 animate-fadeIn">
+      <div>
+        <label class="block text-lg font-semibold mb-1 lang" data-key="form_email">Email:</label>
+        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out hover:border-green-600" />
+      </div>
+
+      <div>
+        <label class="block text-lg font-semibold mb-1 lang" data-key="form_message">Message:</label>
+        <textarea name="message" required rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out hover:border-green-600"></textarea>
+      </div>
+
+      <div class="text-center">
+        <button id="my-form-button" type="submit" class="bg-green-700 hover:bg-green-800 text-white px-8 py-3 text-lg font-medium rounded-xl shadow-md lang transition-transform duration-300 hover:scale-105" data-key="form_submit">Submit</button>
+        <p id="my-form-status" class="mt-3 text-sm text-center"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- GSAP Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  document.getElementById('lang-en')?.addEventListener('click', () => {
+    document.getElementById('html-root')?.setAttribute('lang', 'en');
+    setLanguage('en');
+  });
+  document.getElementById('lang-si')?.addEventListener('click', () => {
+    document.getElementById('html-root')?.setAttribute('lang', 'si');
+    setLanguage('si');
+  });
+
+  gsap.from("#contact .grid", {
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 60,
+    duration: 1.2,
+    ease: "power3.out"
+  });
+
+  var form = document.getElementById("my-form");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Thank you!',
+          text: 'Your message has been sent successfully.',
+          confirmButtonColor: '#166534'
+        });
+        status.innerHTML = "";
+        form.reset();
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Submission Failed',
+              text: data["errors"].map(error => error["message"]).join(", "),
+              confirmButtonColor: '#b91c1c'
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops!',
+              text: 'There was a problem submitting your form.',
+              confirmButtonColor: '#b91c1c'
+            });
+          }
+        });
+      }
+    }).catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'There was a problem submitting your form.',
+        confirmButtonColor: '#b91c1c'
+      });
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit);
+
+  // Language translations rendering function
+  const translations = {
+    contact_title: {
+      en: "Contact Kirineliye Wedagedara",
+      si: "කිරිනැළියේ වෙද ගෙදර අමතන්න"
+    },
+    contact_sub: {
+      en: "We'd love to hear from you. Please reach out via the form or our contact details below.",
+      si: "අප හා සම්බන්ධ වීමට අපි කැමතියි. කරුණාකර පෝරමය හරහා හෝ අපගේ විස්තර මඟින් සම්බන්ධ වන්න."
+    },
+    address_title: {
+      en: "Address",
+      si: "ලිපිනය"
+    },
+    address_text: {
+      en: `Kirineliya Veda Gedara,
+Kandy Road,
+Pasyala,
+(Road between Pasyala Maha Vidyalaya and Primary School)`,
+      si: `කිරිනැළියේ වෙද ගෙදර,
+මහනුවර පාර,
+පස්යාල,
+(පස්යාල මහ විද්‍යාලය සහ ප්‍රාථමික පාසල අතර පාර)`
+    },
+    phone_title: {
+      en: "Phone & WhatsApp",
+      si: "දුරකථන සහ WhatsApp"
+    },
+    location_title: {
+      en: "Our Location",
+      si: "අපගේ ස්ථානය"
+    },
+    clinic_hours_title: {
+      en: "Clinic Hours",
+      si: "චිකිත්සාලයේ සේවා වේලාවන්"
+    },
+clinic_hours: {
+  en: [
+    ["Monday", "Closed"],
+    ["Tuesday", "8 AM – 8 PM"],
+    ["Wednesday", "Closed"],
+    ["Thursday", "8 AM – 8 PM"],
+    ["Friday", "8 AM – 8 PM"],
+    ["Saturday", "Closed"],
+    ["Sunday", "8 AM – 8 PM"]
+  ],
+  si: [
+    ["සඳුදා", "වසන්"],
+    ["අඟහරුවාදා", "පෙ.ව. 8 – ප.ව. 8"],
+    ["බදාදා", "වසන්"],
+    ["බ්‍රහස්පතින්දා", "පෙ.ව. 8 – ප.ව. 8"],
+    ["සිකුරාදා", "පෙ.ව. 8 – ප.ව. 8"],
+    ["සෙනසුරාදා", "වසන්"],
+    ["ඉරිදා", "පෙ.ව. 8 – ප.ව. 8"]
+  ],
+},
+clinic_note: {
+  en: "(Book an appointment before visiting.)",
+  si: "(ඇතුල් වීමට පෙර වේලාවක් වෙන්කරන්න.)"
+},
+    form_email: {
+      en: "Email:",
+      si: "ඊමේල්:"
+    },
+    form_message: {
+      en: "Message:",
+      si: "පණිවිඩය:"
+    },
+    form_submit: {
+      en: "Submit",
+      si: "යවන්න"
+    },
+    footer: {
+      en: "© 2025 Kirineliye Wedagedara. All rights reserved.",
+      si: "© 2025 කිරිනැළියේ වෙද ගෙදර. සියලු හිමිකම් ඇවිරිණි."
+    }
+  };
+
+
+function renderClinicHours(lang) {
+  const tbody = document.querySelector('#clinic-hours-table tbody');
+  tbody.innerHTML = '';
+  const hours = translations.clinic_hours[lang] || translations.clinic_hours.en;
+  hours.forEach(([day, time]) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td class="py-1 pr-4 font-medium">${day}</td><td class="py-1">${time}</td>`;
+    tbody.appendChild(row);
+  });
+
+  const note = translations.clinic_note[lang] || "";
+  const noteEl = document.getElementById("clinic-note");
+  noteEl.textContent = note;
+}
+
+  // Function to set language and update text content dynamically
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (key && translations[key]) {
+        const translation = translations[key][lang];
+        if (Array.isArray(translation)) {
+          // For arrays like clinic_hours, render list items
+          if (el.tagName.toLowerCase() === 'ul') {
+            el.innerHTML = translation.map(item => `<li>${item}</li>`).join('');
+          } else {
+            el.innerHTML = translation.join('<br>');
+          }
+        } else {
+          el.textContent = translation;
+        }
+      }
+      renderClinicHours(lang);
+    });
+  }
+
+  // Set initial language to English on page load
+  setLanguage('en');
+  
+</script>
+
+</body>
+</html>
