@@ -18,6 +18,8 @@ const translations = {
     },
     cta_title: { en: "Explore Our Treatments", si: "අපගේ ප්‍රතිකාර ක්‍රම සෙවීම" },
     cta_button: { en: "View Services", si: "සේවාවන් දැක්ම" },
+    gallery_title: {en:"Our Memories",si:"අපගේ මතකයන්"},
+    gallery_subtext:{en:"Our journey through the lens",si:"අපගේ ගමන කැමරාවකින් සටහන්වෙයි"},
 
     // --- Services Page Specific Translations ---
     services_page_title: { en: "Our Services", si: "අපගේ සේවාවන්" },
@@ -132,8 +134,6 @@ Pasyala,
         en: "Submit",
         si: "යවන්න"
     },
-    gallery_title: { en: "Healing in Frames", si: "සනීපාරක්ෂක ඡායාරූප" },
-    gallery_subtext: { en: "A glimpse into our world of Ayurvedic traditions", si: "පාරම්පරික ආයුර්වේද ලෝකයෙහි එක් දසුනක්" }
 };
 
 function renderClinicHours(lang) {
