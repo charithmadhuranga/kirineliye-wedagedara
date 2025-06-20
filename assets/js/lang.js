@@ -131,7 +131,9 @@ Pasyala,
     form_submit: {
         en: "Submit",
         si: "යවන්න"
-    }
+    },
+    gallery_title: { en: "Healing in Frames", si: "සනීපාරක්ෂක ඡායාරූප" },
+    gallery_subtext: { en: "A glimpse into our world of Ayurvedic traditions", si: "පාරම්පරික ආයුර්වේද ලෝකයෙහි එක් දසුනක්" }
 };
 
 function renderClinicHours(lang) {
