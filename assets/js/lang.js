@@ -27,7 +27,7 @@ const translations = {
     services_title: { en: "Our Treatments & Services", si: "අපගේ ප්‍රතිකාර සහ සේවාවන්" },
     service1_title: { en: "Panchakarma Detox", si: "පන්චකර්ම විෂ විමෝචනය" },
     service1_text: { en: "Comprehensive cleansing therapy to restore body balance and health.", si: "ශරීරයේ සමාන්‍යතාවය නැවත පරිප්‍රේෂණය කිරීම සඳහා සම්පූර්ණ විෂ නිරෝධායන ප්‍රතිකාර." },
-    service2_title: { en: "Herbal Medicine", si: "හෙරබල් ඖෂධ" },
+    service2_title: { en: "Herbal Medicine", si: "ආයුර්වේද ඖෂධ" },
     service2_text: { en: "Customized Ayurvedic medicines prepared with ancient herbal formulas.", si: "පෞරාණික උද්භිද මූලධර්ම අනුව සකස් කළ පුද්ගලීකෘත ආයුර්වේද ඖෂධ." },
     service3_title: { en: "Bone & Joint Therapy", si: "අස්ථි හා සන්ධි ප්‍රතිකාර" },
     service3_text: { en: "Natural orthopedic treatments for injuries and chronic pain.", si: "චිරකාලීන වේදනා සහ තුවාල සඳහා ස්වභාවික අස්ථි වෛද්‍ය ප්‍රතිකාර." },
@@ -134,6 +134,74 @@ Pasyala,
         en: "Submit",
         si: "යවන්න"
     },
+    fracture_title: { en: "Fracture Treatment", si: "කැඩුම් බිඳුම් ප්‍රතිකාර" },
+    fracture_text: { en: "Healing injuries such as sprains, strains, bruises, cuts, shoulder, elbow, knee, and wrist bandages.", si: "උලුක්කු, ඇමැට්ටි, තැලීම්, කෙටීම්, උරහිස, වැළමිට, දණහිස, අත් පා ඇගිලි වෙළුම්පටි සඳහා වෙළුම්පටි වැනි තුවාල සුව කිරීම." },
+
+    joint_title: { en: "Joint & Nerve Related Diseases", si: "සන්ධි හා ස්නායු ආශ්‍රිත රෝග" },
+    joint_text: { en: "Control or cure diseases such as back, knee, shoulder pain, joint swelling, arthritis, paralysis, limb numbness and pain.", si: "කොන්ද, දණහිස්, උරහිස් වේදනාවන්, සන්ධි ඉදිමීම, ආතරයිටිස්, අංශභාගය, අත් පා හිරිය හා වේදනාව වැනි රෝග පාලනය කිරීම හෝ සුව කිරීම." },
+
+    mental_title: { en: "Mental Illness", si: "මානසික රෝග" },
+    mental_text: { en: "Psychological counseling and treatments for depression, anxiety, stress, and emotional trauma.", si: "මනෝවෛද්‍ය උපදේශනය සහ ආතතිය, කනගාටුව, මානසික පීඩනය, මානසික ස්ත්‍රීත්වය සඳහා ප්‍රතිකාර." },
+
+    headache_title: { en: "Headaches", si: "ශීර්ෂ රෝග" },
+    headache_text: { en: "Control or cure all venereal diseases and migraines.", si: "සියලුම පීනස් රෝග හා ඉරුවාරදය පාලනය කිරීම හෝ සුව කිරීම." },
+
+    skin_title: { en: "Skin Diseases", si: "සමේ රෝග" },
+    skin_text: { en: "Control or cure skin diseases such as eczema, rashes, scabies, and lichen.", si: "දද, කුෂ්ඨ, පොතුකබර, සුදු කබර ආදී චර්ම රෝග පාලනය කිරීම හෝ සුව කිරීම." },
+
+    women_title: { en: "All Women's Diseases", si: "සියළුම කාන්තා රෝග" },
+    women_text: { en: "Treatment for delayed fertility, infertility, leprosy, varicose veins, constipation, mental stress, and hidden diseases.", si: "දරුඵල ප්‍රමාදවීම, සුදයාම, ලේමලය, නහර ගැටගැසීම, කෘෂ්වීම, මානසික පීඩනය, රහස් රෝග, කළුකුමාර දෝෂ සඳහා ප්‍රතිකාර." },
+
+    obesity_title: { en: "Obesity Treatment", si: "ස්ථුල භාවය" },
+    obesity_text: { en: "Special treatments to reduce thigh and abdominal protrusion and excessive obesity.", si: "කලවා හා උදරය ඉදිරියට නෙරා ඒම, අධික තරබාරුව අඩුකර ගැනීමට විශේෂ ප්‍රතිකාර." },
+
+    std_title: { en: "Sexually Transmitted Diseases", si: "ලිංගික රෝග" },
+    std_text: { en: "Treatment for premature ejaculation, erectile dysfunction, low libido, and mental distress.", si: "ක්ෂණික මෝචනය, අප්‍රාණිකත්වය, කුඩා වීම, ප්‍රියභාවය අඩුකම, මානසික අසීරුතාව සඳහා ප්‍රතිකාර." },
+
+    beauty_title: { en: "Female / Male Beauty", si: "ස්ත්‍රී / පුරුෂ රූපලාවන්‍යය" },
+    beauty_text: { en: "Treatment for acne scars, all types of scars, oil massage, Ayurvedic facial, body scrub.", si: "කුරුළෑ, ළපකැළැල්, තෛල අභ්‍යාංග, අයුර්වේද ෆේශල්, බොඩි ස්ක්රබ් සඳහා ප්‍රතිකාර." },
+
+    astro_title: { en: "Astrological Service", si: "ජ්‍යෝතිෂ්‍ය සේවාවන්" },
+    astro_text: { en: "All astrological services like horoscope readings, marriage matching, auspicious timings, amulets.", si: "කේන්ද්‍ර බැලීම, පලාඵල කථනය, විවාහ පොරොන්දම් පරික්ෂණය, විවාහ සිදු සදහා සුභ මුහුර්ත් සැකසීම, විවාහ නැකැත්, ආදිය." },
+
+    shanti_title: { en: "Peaceful Deeds / Shanti Karma", si: "ශාන්ති කර්ම" },
+    shanti_text: { en: "Performing Shanti Karma for planetary afflictions, black magic, spirits, protection rituals.", si: "ග්‍රහ පූජා, තනිකම් දෝෂ, කළුකුමාර දෝෂ, යක්ෂ/ප්‍රේත දෝෂ සදහා ශාන්ති කර්ම, දෙහි කැපීම, බහිරව පූජා, ආරක්ෂක යන්ත්‍ර මන්ත්‍ර." },
+
+    // --- New Section: Specialty of the Medical Clinic ---
+    specialty_title: { en: "The Unique Specialty of Pasyala Kirineliya Medical Clinic", si: "පස්යාල කිරිනැළියේ වෙදගෙදර විශේෂත්වය" },
+    specialty_intro: {
+        en: "At the heart of our practice lies the rich heritage and profound knowledge passed down through generations of the Kirineliya Veda lineage.",
+        si: "අපගේ ප්‍රතිකාර ක්‍රමවල හදවත වන්නේ කිරිනැළියේ වෙද පරම්පරාවෙන් පරම්පරාවට පැවත එන පොහොසත් උරුමය සහ ගැඹුරු දැනුමයි."
+    },
+    specialty_oils_heading: { en: "Exclusive Traditional Oils:", si: "අවේණික සාම්ප්‍රදායික තෙල් වර්ග:" },
+    specialty_oils_text: {
+        en: `Our clinic boasts a unique collection of powerful medicinal oils, meticulously prepared according to the specific scientific principles and ancient rituals inherent to the Kirineliya lineage. These include:
+        Kirineliya Kadumbidum Oil, Kirineliya Gasu Oil, Kirineliya Sandi Oil, Kirineliya Kalu Kumara Oil, Maha Divyanganadi Oil, Maha Sanni Raja Oil, Kuddus Oil, Maha Vishnu Raja Oil, Maha Buddha Raja Oil, Maha Devara Raja Oil, Maha Irudepanaya Oil, Maha Rajatarangani Oil.
+        Among our most treasured remedies is a special oil that is about 100 years old, a testament to our enduring legacy and profound traditional wisdom.`,
+        si: `අපගේ වෙදගෙදරට කිරිනැළියේ වෙද පරම්පරාවට අවේනික වූ ශාස්ත්‍රානුකූලව හා චාරිත්‍ර විධි අනුව සකස් කරන ලද මහා බලගතු තෙල් බෙහෙත් වර්ග රාශියක් ඇත. ඒවා නම්:
+        කිරිනැළියේ කැඩුම් බිඳුම් තෙල, කිරිනැළියේ ගස් තෙල, කිරිනැළියේ සන්දි තෙල, කිරිනැළියේ කළු කුමාර තෙල, මහා දිව්‍යාංගනාදි තෙල, මහා සන්නි රාජ තෙල, කුද්දුස් තෙල, මහා විෂ්ණුරාජ තෙල, මහා බුද්ධරාජ තෙල, මහා දේවරාජ තෙල, මහා ඉරුදැපනය තෙල, මහා රාජතරංගණී තෙල.
+        අවුරුදු 100 ක් පමණ පැරණි තෙල් වර්ගද අප සතුව ඇත, එය අපගේ නොනැසී පවතින උරුමයට හා ගැඹුරු සාම්ප්‍රදායික ප්‍රඥාවට සාක්ෂියකි.`
+    },
+    specialty_patient_care_heading: { en: "Personalized Patient Care:", si: "රෝගියා වෙනුවෙන්ම සාදන විශේෂිත ඖෂධ:" },
+    specialty_patient_care_text: {
+        en: "We believe in a holistic and individualized approach. From the initial diagnosis to the treatment plan and the preparation of your specific medication, every step is handled personally by our resident doctor. This ensures continuity of care and medicines specifically formulated for your unique needs.",
+        si: "අපි පරිපූර්ණ සහ පුද්ගලාරෝපිත ප්‍රවේශයක් විශ්වාස කරමු. රෝග නිර්ණයයේ සිට ප්‍රතිකාර සැලැස්ම සහ ඔබේ නිශ්චිත ඖෂධ සකස් කිරීම දක්වා සෑම පියවරක්ම අපගේ වෙදමහතා විසින් පුද්ගලිකව හසුරුවනු ලැබේ. මෙය අඛණ්ඩ ප්‍රතිකාර සහ ඔබේ සුවිශේෂී අවශ්‍යතා සඳහා විශේෂයෙන් සකස් කරන ලද ඖෂධ සහතික කරයි."
+    },
+    specialty_ancient_wisdom_heading: { en: "Ancient Wisdom for Modern Ailments:", si: "සාම්ප්‍රදායික දැනුම හා අවබෝධය:" },
+    specialty_ancient_wisdom_text: {
+        en: "Our practice extends beyond physical remedies. We possess exceptional knowledge and understanding of traditional astrology, demonology, Yantra mantras, and Shanti rituals. This comprehensive understanding allows us to address the root causes of illnesses, integrating spiritual and energetic healing with physical treatments.",
+        si: "අපගේ ප්‍රගුණ කිරීම භෞතික පිළියම් ඉක්මවා යයි. අපට සාම්ප්‍රදායික ජ්‍යෝතිෂය, භූත විද්‍යාව, යන්ත්‍ර මන්ත්‍ර සහ ශාන්ති කර්ම පිළිබඳ විශිෂ්ට දැනුමක් හා අවබෝධයක් ඇත. මෙම විස්තීර්ණ අවබෝධය රෝගවල මූල හේතු ආමන්ත්‍රණය කිරීමට, අධ්‍යාත්මික හා ශක්තිජනක සුව කිරීම් භෞතික ප්‍රතිකාර සමඟ ඒකාබද්ධ කිරීමට අපට ඉඩ සලසයි."
+    },
+    specialty_medicine_prep_heading: { en: "Authentic & Ritualistic Medicine Preparation:", si: "ඖෂධ සකස්කිරීම:" },
+    specialty_medicine_prep_text: {
+        en: "All our medicines are prepared with utmost dedication and adherence to traditional methods and proper rituals. We use traditional medicinal recipes without any alterations, ensuring the efficacy and purity of our ancient remedies. Furthermore, medicines are prepared with the blessings and chanting of Pirith by venerable Buddhist monks, infusing them with spiritual potency.",
+        si: "අපගේ සියලුම ඖෂධ සාම්ප්‍රදායික ක්‍රමවේදයන්ට සහ නිසි වත් පිළිවෙත්වලට අනුකූලව ඉතා කැපවීමෙන් සකස් කරනු ලැබේ. අපගේ පුරාණ ඖෂධවල කාර්යක්ෂමතාවය සහ පාරිශුද්ධත්වය සහතික කරමින්, කිසිදු වෙනසක් නොමැතිව සාම්ප්‍රදායික ඖෂධ වට්ටෝරු භාවිතා කරන්නෙමු. තවද, පූජ්‍ය භික්ෂූන් වහන්සේලා විසින් පිරිත් සජ්ඣායනා කරමින් ඖෂධ සකස් කරනු ලැබේ, එමගින් ඒවාට අධ්‍යාත්මික ශක්තියක් ලබා දේ."
+    },
+    specialty_diagnosis_heading: { en: "Precise Diagnostic Methods:", si: "රෝග පරීක්ෂණය:" },
+    specialty_diagnosis_text: {
+        en: "Our diagnostic process is thorough and traditional, incorporating current astrological charts (Thathkala Kendraya), visual examination (Dasaruwa), and the analysis of omens (Dutha Lakshana) to accurately identify your condition.",
+        si: "අපගේ රෝග විනිශ්චය ක්‍රියාවලිය සවිස්තරාත්මක හා සාම්ප්‍රදායික වන අතර, ඔබේ තත්වය නිවැරදිව හඳුනා ගැනීම සඳහා තත්කාල කේන්ද්‍රයට අනුව, දසරුවෙන් සහ දුත ලක්ෂණ අනුව රෝග පරීක්ෂණය ඇතුළත් වේ."
+    },
 };
 
 function renderClinicHours(lang) {
@@ -161,8 +229,8 @@ function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(element => {
         const key = element.dataset.key;
         if (translations[key] && translations[key][lang]) {
-            // Special handling for pre-formatted text like address_text
-            if (key === 'address_text') {
+            // Special handling for pre-formatted text like address_text and specialty_oils_text etc.
+            if (['address_text', 'specialty_oils_text', 'specialty_patient_care_text', 'specialty_ancient_wisdom_text', 'specialty_medicine_prep_text', 'specialty_diagnosis_text'].includes(key)) {
                 element.innerHTML = translations[key][lang].replace(/\n/g, '<br>');
             } else if (element.tagName.toLowerCase() === 'input' || element.tagName.toLowerCase() === 'textarea') {
                 // Handle placeholders for input/textarea if needed (not in current structure but good to note)

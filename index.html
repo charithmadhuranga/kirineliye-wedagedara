@@ -1,141 +1,143 @@
+
 <!DOCTYPE html>
-<html lang="en" id="html-root"> <head>
+<html lang="en" id="html-root">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kirineliye Wedagedara</title>
+    <title class="lang" data-key="title">Kirineliye Wedagedara</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script defer src="assets/js/lang.js"></script> <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/lang.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   </head>
   <body class="bg-beige font-sans text-gray-800">
-<nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16 items-center">
-      <div class="flex-shrink-0 flex items-center">
-        <a href="index.html" class="text-xl font-bold text-green-700">Kirineliye</a>
-      </div>
+    <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <a href="index.html" class="text-xl font-bold text-green-700">Kirineliye</a>
+          </div>
 
-      <!-- Hamburger -->
-      <div class="md:hidden relative w-6 h-6 overflow-visible">
-        <button id="mobile-menu-button" class="relative w-6 h-6 flex flex-col justify-between items-center focus:outline-none" aria-label="Toggle menu" style="overflow: visible;">
-          <span class="block absolute w-6 h-0.5 bg-current rounded-sm top-1 left-0"></span>
-          <span class="block absolute w-6 h-0.5 bg-current rounded-sm top-1/2 left-0 transform -translate-y-1/2"></span>
-          <span class="block absolute w-6 h-0.5 bg-current rounded-sm bottom-1 left-0"></span>
-        </button>
-      </div>
+          <div class="md:hidden relative w-6 h-6 overflow-visible">
+            <button id="mobile-menu-button" class="relative w-6 h-6 flex flex-col justify-between items-center focus:outline-none" aria-label="Toggle menu" style="overflow: visible;">
+              <span class="block absolute w-6 h-0.5 bg-current rounded-sm top-1 left-0"></span>
+              <span class="block absolute w-6 h-0.5 bg-current rounded-sm top-1/2 left-0 transform -translate-y-1/2"></span>
+              <span class="block absolute w-6 h-0.5 bg-current rounded-sm bottom-1 left-0"></span>
+            </button>
+          </div>
 
-      <div class="hidden md:flex flex-1 justify-center items-center space-x-8">
-        <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
-        <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
-        <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
-        <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
-      </div>
+          <div class="hidden md:flex flex-1 justify-center items-center space-x-8">
+            <a href="index.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+            <a href="services.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+            <a href="about.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+            <a href="contact.html" class="text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+          </div>
 
-      <div class="hidden md:flex space-x-2">
-        <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
-        <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
-      </div>
-    </div>
+          <div class="hidden md:flex space-x-2">
+            <button id="lang-en" class="px-3 py-1 border rounded text-sm">EN</button>
+            <button id="lang-si" class="px-3 py-1 border rounded text-sm">සිං</button>
+          </div>
+        </div>
 
-    <div id="mobile-menu" class="md:hidden hidden mt-2 overflow-hidden">
-      <div class="flex flex-col items-start space-y-2 py-2">
-        <a href="index.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
-        <a href="services.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
-        <a href="about.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
-        <a href="contact.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
-        <div class="flex space-x-2 pt-2">
-          <button id="lang-en-mobile" class="px-3 py-1 border rounded text-sm">EN</button>
-          <button id="lang-si-mobile" class="px-3 py-1 border rounded text-sm">සිං</button>
+        <div id="mobile-menu" class="md:hidden hidden mt-2 overflow-hidden">
+          <div class="flex flex-col items-start space-y-2 py-2">
+            <a href="index.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_home">Home</a>
+            <a href="services.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_services">Services</a>
+            <a href="about.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_about">About</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-green-700 font-medium lang" data-key="nav_contact">Contact Us</a>
+            <div class="flex space-x-2 pt-2">
+              <button id="lang-en-mobile" class="px-3 py-1 border rounded text-sm">EN</button>
+              <button id="lang-si-mobile" class="px-3 py-1 border rounded text-sm">සිං</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  const bars = btn.querySelectorAll('span');
-  let menuOpen = false;
+    <script>
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      const bars = btn.querySelectorAll('span');
+      let menuOpen = false;
 
-  btn.addEventListener('click', () => {
-    if (!menuOpen) {
-      // Animate hamburger to X
-      gsap.to(bars[0], { rotation: 45, top: 8, transformOrigin: "50% 50%", duration: 0.15 });
-      gsap.to(bars[1], { opacity: 0, duration: 0.1 });
-      gsap.to(bars[2], { rotation: -45, top: 8, transformOrigin: "50% 50%", duration: 0.15 });
-      
-      // Show menu quickly
-      menu.classList.remove('hidden');
-      gsap.fromTo(menu, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.15, ease: "power1.out" });
+      btn.addEventListener('click', () => {
+        if (!menuOpen) {
+          // Animate hamburger to X
+          gsap.to(bars[0], { rotation: 45, top: 8, transformOrigin: "50% 50%", duration: 0.15 });
+          gsap.to(bars[1], { opacity: 0, duration: 0.1 });
+          gsap.to(bars[2], { rotation: -45, top: 8, transformOrigin: "50% 50%", duration: 0.15 });
 
-    } else {
-      // Animate X back to hamburger
-      gsap.to(bars[0], { rotation: 0, top: "0.25rem", duration: 0.15 });
-      gsap.to(bars[1], { opacity: 1, duration: 0.1 });
-      gsap.to(bars[2], { rotation: 0, top: "1.25rem", duration: 0.15 });
+          // Show menu quickly
+          menu.classList.remove('hidden');
+          gsap.fromTo(menu, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.15, ease: "power1.out" });
 
-      // Hide menu quickly
-      gsap.to(menu, {
-        height: 0,
-        opacity: 0,
-        duration: 0.15,
-        ease: "power1.in",
-        onComplete: () => menu.classList.add('hidden')
+        } else {
+          // Animate X back to hamburger
+          gsap.to(bars[0], { rotation: 0, top: "0.25rem", duration: 0.15 });
+          gsap.to(bars[1], { opacity: 1, duration: 0.1 });
+          gsap.to(bars[2], { rotation: 0, top: "1.25rem", duration: 0.15 });
+
+          // Hide menu quickly
+          gsap.to(menu, {
+            height: 0,
+            opacity: 0,
+            duration: 0.15,
+            ease: "power1.in",
+            onComplete: () => menu.classList.add('hidden')
+          });
+        }
+        menuOpen = !menuOpen;
       });
+
+      // Language sync for mobile
+      document.getElementById('lang-en-mobile')?.addEventListener('click', () => {
+        document.documentElement.setAttribute('lang', 'en');
+        setLanguage('en');
+      });
+      document.getElementById('lang-si-mobile')?.addEventListener('click', () => {
+        document.documentElement.setAttribute('lang', 'si');
+        setLanguage('si');
+      });
+
+    function openModal(card) {
+      // Prevent modal on small screens (e.g., mobile devices)
+      if (window.innerWidth < 768) return;
+
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const imgSrc = card.querySelector("img").src;
+
+      modalImg.src = imgSrc;
+      modalImg.classList.remove("animate-liquid-open"); // reset animation
+      void modalImg.offsetWidth; // force reflow
+      modalImg.classList.add("animate-liquid-open"); // re-add animation
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
     }
-    menuOpen = !menuOpen;
-  });
-
-  // Language sync for mobile
-  document.getElementById('lang-en-mobile')?.addEventListener('click', () => {
-    document.documentElement.setAttribute('lang', 'en');
-    setLanguage('en');
-  });
-  document.getElementById('lang-si-mobile')?.addEventListener('click', () => {
-    document.documentElement.setAttribute('lang', 'si');
-    setLanguage('si');
-  });
-
-function openModal(card) {
-  // Prevent modal on small screens (e.g., mobile devices)
-  if (window.innerWidth < 768) return;
-
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  const imgSrc = card.querySelector("img").src;
-
-  modalImg.src = imgSrc;
-  modalImg.classList.remove("animate-liquid-open"); // reset animation
-  void modalImg.offsetWidth; // force reflow
-  modalImg.classList.add("animate-liquid-open"); // re-add animation
-
-  modal.classList.remove("hidden");
-  modal.classList.add("flex");
-}
 
 
-  function closeModal() {
-    const modal = document.getElementById("imageModal");
-    modal.classList.remove("flex");
-    modal.classList.add("hidden");
-  }
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.remove("flex");
+        modal.classList.add("hidden");
+      }
 
-  // Optional: Close on backdrop click
-  document.getElementById("imageModal").addEventListener("click", (e) => {
-    if (e.target.id === "imageModal") closeModal();
-  });
-</script>
-
-
+      // Optional: Close on backdrop click
+      document.getElementById("imageModal").addEventListener("click", (e) => {
+        if (e.target.id === "imageModal") closeModal();
+      });
+    </script>
 
 
-
-  <div class="h-16"></div>
+    <div class="h-16"></div>
     <section class="relative w-full h-screen overflow-hidden">
       <div id="hero-slideshow" class="absolute inset-0">
         <div class="slide absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1492552085122-36706c238263?q=80&w=1497&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
@@ -162,147 +164,235 @@ function openModal(card) {
       <a href="services.html" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 transition lang" data-key="cta_button">View Services</a>
     </section>
 
+<section class="py-20 px-6 md:px-20 bg-gradient-to-br from-white via-green-50 to-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8 text-center text-green-800 lang" data-key="specialty_title" data-aos="fade-down">The Unique Specialty of Pasyala Kirineliya Medical Clinic</h2>
+    <p class="text-lg mb-14 text-center text-gray-600 lang leading-relaxed max-w-3xl mx-auto" data-key="specialty_intro" data-aos="fade-up">Our clinic stands out through its deep-rooted traditions and commitment to authentic Ayurvedic practices. We combine ancient wisdom with personalized care to ensure the highest standards of healing.</p>
 
-<section id="gallery" class="py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center mb-16">
-      <h2 class="text-5xl font-extrabold lang " data-key="gallery_title">Our Memories</h2>
-      <p class="text-lg mt-3 text-gray-600 lang" data-key="gallery_subtext">Our journey through the lens</p>
-    </div>
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2" data-aos="fade-up" data-aos-delay="200">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-7xl mx-auto">
-      <!-- Card 1 -->
-      <div class="group cursor-pointer" onclick="openModal(this)">
-        <div class="overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="https://images.unsplash.com/photo-1743448748313-80eb7f9eb2b7?q=80&w=1506" 
-               alt="Traditional Healing"
-               class="w-full h-80 object-cover rounded-xl" />
+      <div class="bg-white flex flex-col h-full p-6 rounded-2xl shadow-md border border-green-100 hover:shadow-lg transition duration-300">
+        <img src="https://images.unsplash.com/photo-1624454002302-36b824d7bd0a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Herbal Oils and Medicines" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="flex items-start gap-4">
+          <div class="text-3xl">🌿</div>
+          <div>
+            <h3 class="text-xl font-semibold text-green-700 mb-2 lang" data-key="specialty_oils_heading">Unique Traditional Oils and Medicines</h3>
+            <p class="text-gray-700 text-base leading-relaxed lang" data-key="specialty_oils_text">We utilize specially prepared traditional Ayurvedic oils and medicines, formulated using ancient recipes passed down through generations. These unique preparations enhance the effectiveness of our treatments and provide profound healing benefits.</p>
+          </div>
         </div>
-        <p class="text-center mt-2 font-medium">Traditional Healing</p>
       </div>
 
-      <!-- Card 2 -->
-      <div class="group cursor-pointer" onclick="openModal(this)">
-        <div class="overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="https://images.unsplash.com/photo-1749581434794-d5de133303d9?q=80&w=1470" 
-               alt="Spiritual Ritual"
-               class="w-full h-80 object-cover rounded-xl" />
+      <div class="bg-white flex flex-col h-full p-6 rounded-2xl shadow-md border border-green-100 hover:shadow-lg transition duration-300">
+        <img src="https://images.unsplash.com/photo-1543333995-a78aea2eee50?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Personalized Patient Care" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="flex items-start gap-4">
+          <div class="text-3xl">🤝</div>
+          <div>
+            <h3 class="text-xl font-semibold text-green-700 mb-2 lang" data-key="specialty_patient_care_heading">Personalized Patient Care</h3>
+            <p class="text-gray-700 text-base leading-relaxed lang" data-key="specialty_patient_care_text">Every patient receives individual attention and a customized treatment plan. Our dedicated team ensures a comfortable and supportive environment, fostering trust and promoting faster recovery.</p>
+          </div>
         </div>
-        <p class="text-center mt-2 font-medium">Spiritual Ritual</p>
       </div>
 
-      <!-- Card 3 -->
-      <div class="group cursor-pointer" onclick="openModal(this)">
-        <div class="overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="https://images.unsplash.com/photo-1749936336802-29c1d8fd40a4?q=80&w=1632" 
-               alt="Ayurvedic Care"
-               class="w-full h-80 object-cover rounded-xl" />
+      <div class="bg-white flex flex-col h-full p-6 rounded-2xl shadow-md border border-green-100 hover:shadow-lg transition duration-300">
+        <img src="assets/images/tovil-9.jpeg" alt="Ancient Healing Wisdom" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="flex items-start gap-4">
+          <div class="text-3xl">📜</div>
+          <div>
+            <h3 class="text-xl font-semibold text-green-700 mb-2 lang" data-key="specialty_ancient_wisdom_heading">Ancient Healing Wisdom</h3>
+            <p class="text-gray-700 text-base leading-relaxed lang" data-key="specialty_ancient_wisdom_text">Our treatments are based on centuries-old Ayurvedic texts and practices, ensuring a profound and authentic healing experience. We honor the heritage of traditional Sri Lankan medicine.</p>
+          </div>
         </div>
-        <p class="text-center mt-2 font-medium">Ayurvedic Care</p>
       </div>
 
-      <!-- Card 4 -->
-      <div class="group cursor-pointer" onclick="openModal(this)">
-        <div class="overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="https://images.unsplash.com/photo-1749936336802-29c1d8fd40a4?q=80&w=1632" 
-               alt="Herbal Remedies"
-               class="w-full h-80 object-cover rounded-xl" />
+      <div class="bg-white flex flex-col h-full p-6 rounded-2xl shadow-md border border-green-100 hover:shadow-lg transition duration-300">
+        <img src="assets/images/herbal-3.jpeg" alt="In-House Medicine Preparation" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="flex items-start gap-4">
+          <div class="text-3xl">🧪</div>
+          <div>
+            <h3 class="text-xl font-semibold text-green-700 mb-2 lang" data-key="specialty_medicine_prep_heading">In-House Medicine Preparation</h3>
+            <p class="text-gray-700 text-base leading-relaxed lang" data-key="specialty_medicine_prep_text">Many of our herbal medicines are prepared fresh within our clinic, allowing us to maintain strict quality control and ensure the potency and purity of every dose.</p>
+          </div>
         </div>
-        <p class="text-center mt-2 font-medium">Herbal Remedies</p>
       </div>
-    <!-- Card 5 -->
-      <div class="group cursor-pointer" onclick="openModal(this)">
-        <div class="overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="https://images.unsplash.com/photo-1750126833705-ba98013f16f3?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-               alt="Herbal Remedies"
-               class="w-full h-80 object-cover rounded-xl" />
-        </div>
-        <p class="text-center mt-2 font-medium">Herbal Remedies</p>
-      </div>
-          <!-- Card 6 -->
-      <div class="group cursor-pointer" onclick="openModal(this)">
-        <div class="overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="https://images.unsplash.com/photo-1743841727503-dc5582e348f3?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-               alt="Herbal Remedies"
-               class="w-full h-80 object-cover rounded-xl" />
-        </div>
-        <p class="text-center mt-2 font-medium">Herbal Remedies</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Modal -->
-  <div id="imageModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center">
-    <div class="relative max-w-5xl w-full mx-auto p-4">
-      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl font-bold z-50">&times;</button>
-      <img id="modalImage" src="" alt="Expanded" 
-           class="w-full max-h-[90vh] object-contain rounded-xl animate-liquid-open" />
+      <div class="bg-white flex flex-col h-full p-6 rounded-2xl shadow-md border border-green-100 hover:shadow-lg transition duration-300">
+        <img src="assets/images/services/astro.jpg" alt="Precise Diagnosis and Treatment" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="flex items-start gap-4">
+          <div class="text-3xl">🩺</div>
+          <div>
+            <h3 class="text-xl font-semibold text-green-700 mb-2 lang" data-key="specialty_diagnosis_heading">Precise Diagnosis and Treatment</h3>
+            <p class="text-gray-700 text-base leading-relaxed lang" data-key="specialty_diagnosis_text">Our experienced physicians conduct thorough diagnoses, meticulously identifying the root cause of ailments to provide targeted and effective treatments that lead to lasting results.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+</section>
 
+
+
+    <section id="gallery" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6 text-center mb-10">
+        <h2 class="text-5xl font-extrabold lang" data-key="gallery_title">Our Memories</h2>
+        <p class="text-lg mt-3 text-gray-600 lang" data-key="gallery_subtext">Our journey through the lens</p>
+      </div>
+
+      <div class="swiper max-w-6xl mx-auto px-4">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide group cursor-pointer px-2" onclick="openModal(this)">
+            <div class="overflow-hidden rounded-xl shadow-md">
+              <img src="https://images.unsplash.com/photo-1743448748313-80eb7f9eb2b7?q=80&w=1506"
+                   alt="Traditional Healing"
+                   class="w-full h-72 sm:h-80 md:h-96 object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105" />
+            </div>
+            <p class="text-center mt-2 font-medium">Traditional Healing</p>
+          </div>
+
+          <div class="swiper-slide group cursor-pointer px-2" onclick="openModal(this)">
+            <div class="overflow-hidden rounded-xl shadow-md">
+              <img src="https://images.unsplash.com/photo-1749581434794-d5de133303d9?q=80&w=1470"
+                   alt="Spiritual Ritual"
+                   class="w-full h-72 sm:h-80 md:h-96 object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105" />
+            </div>
+            <p class="text-center mt-2 font-medium">Spiritual Ritual</p>
+          </div>
+
+          <div class="swiper-slide group cursor-pointer px-2" onclick="openModal(this)">
+            <div class="overflow-hidden rounded-xl shadow-md">
+              <img src="https://images.unsplash.com/photo-1749936336802-29c1d8fd40a4?q=80&w=1632"
+                   alt="Ayurvedic Care"
+                   class="w-full h-72 sm:h-80 md:h-96 object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105" />
+            </div>
+            <p class="text-center mt-2 font-medium">Ayurvedic Care</p>
+          </div>
+
+                <div class="swiper-slide group cursor-pointer px-2" onclick="openModal(this)">
+            <div class="overflow-hidden rounded-xl shadow-md">
+              <img src="https://images.unsplash.com/photo-1749936336802-29c1d8fd40a4?q=80&w=1632"
+                   alt="Ayurvedic Care"
+                   class="w-full h-72 sm:h-80 md:h-96 object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105" />
+            </div>
+            <p class="text-center mt-2 font-medium">Ayurvedic Care</p>
+          </div>
+
+                <div class="swiper-slide group cursor-pointer px-2" onclick="openModal(this)">
+            <div class="overflow-hidden rounded-xl shadow-md">
+              <img src="https://images.unsplash.com/photo-1749936336802-29c1d8fd40a4?q=80&w=1632"
+                   alt="Ayurvedic Care"
+                   class="w-full h-72 sm:h-80 md:h-96 object-cover rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105" />
+            </div>
+            <p class="text-center mt-2 font-medium">Ayurvedic Care</p>
+          </div>
+
+          </div>
+
+        <div class="swiper-button-next text-gray-700 hover:text-green-700"></div>
+        <div class="swiper-button-prev text-gray-700 hover:text-green-700"></div>
+
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </section>
+
+
+    <div id="imageModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center">
+      <div class="relative max-w-5xl w-full mx-auto p-4">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl font-bold z-50">&times;</button>
+        <img id="modalImage" src="" alt="Expanded"
+             class="w-full max-h-[90vh] object-contain rounded-xl animate-liquid-open" />
+      </div>
+    </div>
 
 
     <footer class="bg-gray-800 text-white text-center py-6">
       <p class="lang" data-key="footer">© 2025 Kirineliye Wedagedara. All rights reserved.</p>
     </footer>
 
-<!-- WhatsApp Chat Bubble -->
-<a href="https://wa.me/94715227684?text=Hi%20Aroka%2C%20I%20have%20a%20question%20about%20your%20collection" 
-   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-  <div class="whatsapp-tooltip">Chat with us</div>
-  <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <path fill="#25D366" d="M16 0C7.163 0 0 7.163 0 16c0 2.837.743 5.503 2.038 7.825L0 32l8.367-2.194A15.928 15.928 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/>
-    <path fill="#FFF" d="M24.49 19.49c-.37-.184-2.18-1.08-2.52-1.205-.34-.12-.59-.184-.84.185-.247.37-.96 1.205-1.18 1.45-.217.246-.43.277-.8.093-.37-.184-1.56-.576-2.97-1.84-1.096-.98-1.84-2.19-2.05-2.56-.216-.37-.023-.57.162-.754.167-.167.37-.432.555-.648.186-.215.247-.37.37-.617.123-.246.062-.463-.03-.648-.093-.185-.84-2.037-1.15-2.79-.302-.727-.61-.63-.84-.64l-.718-.012c-.247 0-.648.093-.986.463-.34.37-1.297 1.267-1.297 3.087s1.33 3.58 1.515 3.827c.186.246 2.614 3.99 6.337 5.596.885.38 1.576.606 2.114.774.89.283 1.7.243 2.34.148.715-.106 2.18-.89 2.49-1.753.308-.864.308-1.603.216-1.753-.092-.154-.34-.246-.71-.432z"/>
-  </svg>
-</a>
+    <a href="https://wa.me/94715227684?text=Hi%20Aroka%2C%20I%20have%20a%20question%20about%20your%20collection"
+       class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+      <div class="whatsapp-tooltip">Chat with us</div>
+      <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <path fill="#25D366" d="M16 0C7.163 0 0 7.163 0 16c0 2.837.743 5.503 2.038 7.825L0 32l8.367-2.194A15.928 15.928 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/>
+        <path fill="#FFF" d="M24.49 19.49c-.37-.184-2.18-1.08-2.52-1.205-.34-.12-.59-.184-.84.185-.247.37-.96 1.205-1.18 1.45-.217.246-.43.277-.8.093-.37-.184-1.56-.576-2.97-1.84-1.096-.98-1.84-2.19-2.05-2.56-.216-.37-.023-.57.162-.754.167-.167.37-.432.555-.648.186-.215.247-.37.37-.617.123-.246.062-.463-.03-.648-.093-.185-.84-2.037-1.15-2.79-.302-.727-.61-.63-.84-.64l-.718-.012c-.247 0-.648.093-.986.463-.34.37-1.297 1.267-1.297 3.087s1.33 3.58 1.515 3.827c.186.246 2.614 3.99 6.337 5.596.885.38 1.576.606 2.114.774.89.283 1.7.243 2.34.148.715-.106 2.18-.89 2.49-1.753.308-.864.308-1.603.216-1.753-.092-.154-.34-.246-.71-.432z"/>
+      </svg>
+    </a>
 
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  background-color: #25D366;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-}
+    <style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background-color: #25D366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
 
-.whatsapp-icon {
-  width: 32px;
-  height: 32px;
-}
+    .whatsapp-icon {
+      width: 32px;
+      height: 32px;
+    }
 
-.whatsapp-tooltip {
-  position: absolute;
-  right: 70px;
-  background-color: #1f2937;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 70px;
+      background-color: #1f2937;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
 
-.whatsapp-float:hover .whatsapp-tooltip {
-  opacity: 1;
-}
-</style>
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+    }
+    </style>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
-    </body>
+    <script>
+      new Swiper('.swiper', {
+        loop: true,
+        spaceBetween: 20, // Fix spacing between slides
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        speed: 800,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }
+      });
+    </script>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+  </body>
 </html>
