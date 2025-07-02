@@ -138,6 +138,64 @@
     <footer class="bg-gray-800 text-white text-center py-6">
       <p class="lang" data-key="footer">© 2025 Kirineliye Wedagedara. All rights reserved.</p>
     </footer>
+<!-- WhatsApp Chat Bubble -->
+<a href="https://wa.me/94715227684?text=Hi%20Aroka%2C%20I%20have%20a%20question%20about%20your%20collection" 
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <div class="whatsapp-tooltip">Chat with us</div>
+  <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path fill="#25D366" d="M16 0C7.163 0 0 7.163 0 16c0 2.837.743 5.503 2.038 7.825L0 32l8.367-2.194A15.928 15.928 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/>
+    <path fill="#FFF" d="M24.49 19.49c-.37-.184-2.18-1.08-2.52-1.205-.34-.12-.59-.184-.84.185-.247.37-.96 1.205-1.18 1.45-.217.246-.43.277-.8.093-.37-.184-1.56-.576-2.97-1.84-1.096-.98-1.84-2.19-2.05-2.56-.216-.37-.023-.57.162-.754.167-.167.37-.432.555-.648.186-.215.247-.37.37-.617.123-.246.062-.463-.03-.648-.093-.185-.84-2.037-1.15-2.79-.302-.727-.61-.63-.84-.64l-.718-.012c-.247 0-.648.093-.986.463-.34.37-1.297 1.267-1.297 3.087s1.33 3.58 1.515 3.827c.186.246 2.614 3.99 6.337 5.596.885.38 1.576.606 2.114.774.89.283 1.7.243 2.34.148.715-.106 2.18-.89 2.49-1.753.308-.864.308-1.603.216-1.753-.092-.154-.34-.246-.71-.432z"/>
+  </svg>
+</a>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  background-color: #1f2937;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+}
+</style>
+
+
 
     </body>
 </html>
